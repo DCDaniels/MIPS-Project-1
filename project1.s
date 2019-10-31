@@ -26,6 +26,7 @@ main:
 	li $s5, 0				#Placeholder for calculations
 	li $s6, 65				#Need in order to find numbers less than 65 without ignoring 64
 	li $s7, 57				#Ending of numbers
+	li $t7, 48				#Beginning of numbers
 	
 	
 loop: 						#Loops through all letters in string
@@ -68,8 +69,9 @@ common_letters:					#Function that makes sure to check for common letters
 	
 numbers:
 	bgt $t5,$s7,ignore_char			#Ignore characters after the numbers
-		
-	
+	blt $t5,$t7,ignore_char			#Ignore characters before numbers	
+	addi $s5,$t5,-48			#Stores the decimal value of numbers in $s5
+	add $t2, $t2,$s5			#Add the character to the su and store it in $t2
 
 
 
