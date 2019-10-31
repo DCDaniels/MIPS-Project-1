@@ -11,7 +11,7 @@ main:
 	syscall 				#Issues a System Call
 	
 	la $t1,InputVariable			#Load the variable to the register $t1
-	li $t2,0				#Initialize $t2 for sum
+	li $t2,0				#Initialize $t2 to calculate sum
 	li $t3,32				#Stored a space in $t3 to check for spaces
 	li $t6,0				#Initialized a register to 0
 	li $t4,0x0A				#Created a new line here 
@@ -22,8 +22,15 @@ loop: 						#Loops through all letters in string
 	beq $t5,$t3, ignore_char		#If a character is a space it will skip
 	beq $t5,$t6, ignore_char		#If a character is 0 it will skip
 	jr $ra					#Jump Register unconditionally
-	  	
+end_loop:					#Ending of loop
+
+	li $v0,1
 	
+
+
+
+
+
 	
 	
 	 			
