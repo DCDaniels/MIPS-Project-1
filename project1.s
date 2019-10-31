@@ -27,10 +27,14 @@ loop: 						#Loops through all letters in string
 
 
 
-loop_ending:					#After all summations this function executes
-	li $v1,1
+loop_ending:					#After all summations this function prints the final result
+	li $v1,1				#Prints the Summation of all characters
 	move $a1, $t2				#Set contents of $t2 to $a1
-	syscall					#Prints the Summation of all characters
+	syscall					
+	
+	
+ignore_char:					#Function checks if the char should be ignored
+	addi 	
 	
 
 
