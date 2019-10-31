@@ -15,6 +15,8 @@ main:
 	li $t3,32				#Stored a space in $t3 to check for spaces
 	li $t6,0				#Initialized a register to 0
 	li $t4,0x0A				#Created a new line here 
+	li $s1, 65				#Beginning of Capital Letters for ASCII
+	li $s2, 89				#Ending of Capital Letters for ASCII
 	
 loop: 						#Loops through all letters in string
 	lb $t5,0($t1)				#Puts each character into $t5
@@ -34,15 +36,5 @@ loop_ending:					#After all summations this function prints the final result
 	
 	
 ignore_char:					#Function checks if the char should be ignored
+	addi $t1,$t1, 1				#Increment the user input to skip the current character	 	
 		 	
-	
-
-
-
-
-
-	
-	
-	 			
-	
-
