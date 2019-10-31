@@ -1,7 +1,6 @@
 .data 						#Declarations
 InputVariable: .space 10			#Variable for user input 
 
-
 .text						#Instructions stored in text segment at next available address
 .globl main					#Allows main to be refrenced anywhere
 
@@ -43,10 +42,12 @@ ignore_char:					#Function checks if the char should be ignored
 	addi $t1,$t1, 1				#Increment the user input to skip the current character	
 	j loop					#Jump back to loop to check next value 	
 	
+	
 capital_letters:				#Function that makes sure that check for capital letters
-	 
-	bgt 
-	blt
+	bgt $t5,$s2, common_letters		#Branch to common letters function if > 89 
+	
+	
+common_letters:
 	
 
 
