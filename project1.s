@@ -38,6 +38,8 @@ loop_ending:					#After all summations this function prints the final result
 	li $v0,1				#Prints the Summation of all characters
 	move $a0, $t2				#Set contents of $t2 to $a1
 	syscall					#Issues a System Call
+	li $v0, 10				#End Program
+	syscall					
 	
 	
 ignore_char:					#Function checks if the char should be ignored
