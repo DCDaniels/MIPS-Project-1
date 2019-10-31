@@ -45,13 +45,13 @@ ignore_char:					#Function checks if the char should be ignored
 	j loop					#Jump back to loop to check next value 	
 	
 	
-capital_letters:				#Function that makes sure that check for capital letters
+capital_letters:				#Function that makes sure to check for capital letters
 	bgt $t5,$s2, common_letters		#Branch to common letters function if > 89 
 	
 	
-common_letters:
-	
-	97-122
+common_letters:					#Function that makes sure to check for common letters
+	blt $t5,$s3, ignore_char		#Branch if in between 89-97
+	bgt $t5,$s4, ignore_char		#Branch if in greater than 122
 
 
 
