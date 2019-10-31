@@ -19,6 +19,7 @@ main:
 	li $s2, 89				#Ending of Capital Letters for ASCII
 	li $s3, 97				#Beginning of Common Letters for ASCII
 	li $s4, 122				#Ending of Common Letters for ASCII
+	li $s5, 0				#Placeholder for calculations
 	
 loop: 						#Loops through all letters in string
 	lb $t5,0($t1)				#Puts each character into $t5
@@ -47,7 +48,8 @@ ignore_char:					#Function checks if the char should be ignored
 	
 capital_letters:				#Function that makes sure to check for capital letters
 	bgt $t5,$s2, common_letters		#Branch to common letters function if > 89 
-	
+	addi $s5,$t5,-55			#Stores the decimal value of capital letters in $s5
+	add $t2,$t2,$s5				#Store the sum into $t2
 	
 common_letters:					#Function that makes sure to check for common letters
 	blt $t5,$s3, ignore_char		#Branch if in between 89-97
