@@ -1,6 +1,7 @@
 .data 						#Declarations
 InputVariable: .space 10			#Variable for user input 
 
+
 .text						#Instructions stored in text segment at next available address
 .globl main					#Allows main to be refrenced anywhere
 
@@ -23,6 +24,8 @@ loop: 						#Loops through all letters in string
 	beq $t5,$t4, loop_ending		#End Loop when all characters are used
 	beq $t5,$t3, ignore_char		#If a character is a space it will skip
 	beq $t5,$t6, ignore_char		#If a character is 0 it will skip
+	bgt $t5,$s1, capital_letters		#If character > 65 go to capital_letters
+	
 	addi $t1,$t1, 1				#Increment to check next character in the loop
 	j loop					#Restart the loop
 
@@ -39,4 +42,13 @@ loop_ending:					#After all summations this function prints the final result
 ignore_char:					#Function checks if the char should be ignored
 	addi $t1,$t1, 1				#Increment the user input to skip the current character	
 	j loop					#Jump back to loop to check next value 	
+	
+capital_letters:				#Function that makes sure that check for capital letters
+	 
+	bgt 
+	blt
+	
+
+
+
 		 	
