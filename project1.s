@@ -5,9 +5,9 @@ InputVariable: .space 10			#Variable for user input
 .globl main					#Allows main to be refrenced anywhere
 
 main:
-	li $v1, 8				#Allows user to input
-	la $a1, InputVariable			#Saves input to  variable
-	li $a2,11 				#Limits the input to 10
+	li $v0, 8				#Allows user to input
+	la $a0, InputVariable			#Saves input to  variable
+	li $a1,11 				#Limits the input to 10
 	syscall 				#Issues a System Call
 	
 	la $t1,InputVariable			#Load the variable to the register $t1
@@ -28,13 +28,13 @@ loop: 						#Loops through all letters in string
 
 
 loop_ending:					#After all summations this function prints the final result
-	li $v1,1				#Prints the Summation of all characters
-	move $a1, $t2				#Set contents of $t2 to $a1
+	li $v0,1				#Prints the Summation of all characters
+	move $a0, $t2				#Set contents of $t2 to $a1
 	syscall					
 	
 	
 ignore_char:					#Function checks if the char should be ignored
-	addi 	
+		 	
 	
 
 
