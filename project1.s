@@ -27,7 +27,6 @@ loop: 						#Loops through all letters in string
 	beq $t5,$t3, ignore_char		#If a character is a space it will skip
 	beq $t5,$t6, ignore_char		#If a character is 0 it will skip
 	bgt $t5,$s1, capital_letters		#If character > 65 go to capital_letters
-	
 	addi $t1,$t1, 1				#Increment to check next character in the loop
 	j loop					#Restart the loop
 
@@ -49,11 +48,13 @@ ignore_char:					#Function checks if the char should be ignored
 capital_letters:				#Function that makes sure to check for capital letters
 	bgt $t5,$s2, common_letters		#Branch to common letters function if > 89 
 	addi $s5,$t5,-55			#Stores the decimal value of capital letters in $s5
-	add $t2,$t2,$s5				#Store the sum into $t2
+	add $t2,$t2,$s5				#Add the character to the sum and store in $t2
 	
 common_letters:					#Function that makes sure to check for common letters
 	blt $t5,$s3, ignore_char		#Branch if in between 89-97
 	bgt $t5,$s4, ignore_char		#Branch if in greater than 122
+	addi $s5,$t5,-87			#Stores the decimal value of common letters in $s5
+	add $t2,$t2,$s5				#Add the character to the sum and store in $t2
 
 
 
