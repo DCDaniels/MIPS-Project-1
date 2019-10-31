@@ -60,19 +60,24 @@ capital_letters:				#Function that makes sure to check for capital letters
 	bgt $t5,$s2, common_letters		#Branch to common letters function if > 89 
 	addi $s5,$t5,-55			#Stores the decimal value of capital letters in $s5
 	add $t2,$t2,$s5				#Add the character to the sum and store in $t2
+	addi $t1,$t1, 1				#Increment to check next character in the loop
+	j loop
 	
 common_letters:					#Function that makes sure to check for common letters
 	blt $t5,$s3, ignore_char		#Branch if in between 89-97
 	bgt $t5,$s4, ignore_char		#Branch if in greater than 122
 	addi $s5,$t5,-87			#Stores the decimal value of common letters in $s5
 	add $t2,$t2,$s5				#Add the character to the sum and store in $t2
+	addi $t1,$t1, 1				#Increment to check next character in the loop
+	j loop					#Jump back to loop to check next value
 	
 numbers:
 	bgt $t5,$s7,ignore_char			#Ignore characters after the numbers
 	blt $t5,$t7,ignore_char			#Ignore characters before numbers	
 	addi $s5,$t5,-48			#Stores the decimal value of numbers in $s5
 	add $t2, $t2,$s5			#Add the character to the su and store it in $t2
-
+	addi $t1,$t1, 1				#Increment to check next character in the loop
+	j loop					#Jump back to loop to check next value
 
 
 		 	
