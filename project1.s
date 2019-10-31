@@ -1,6 +1,7 @@
-.data 		#Declarations
-InputVariable: .space  #Variable for user input 
+.data 						#Declarations
+InputVariable: .space 10			#Variable for user input 
 
+.text
 .globl main
 
 main:
@@ -12,8 +13,10 @@ main:
 	la $t1, InputVariable			#Load the variable to the register $t1
 	li $t2,0				#Initialize $t2 for sum
 	li $t3,32				#Stored a space in $t3 to check for spaces
-	li $t6, 0x0A				#Created a new line here 
+	li $t4, 0x0A				#Created a new line here 
 	
-	
+loop: 
+	lb $t5,0($t1)				#Put the values into $t5
+	 			
 	
 
