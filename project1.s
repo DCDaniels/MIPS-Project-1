@@ -20,9 +20,9 @@ main:
 	li $t6,48				#Initialized a register to 0
 	li $t4,0x0A				#Created a new line here 
 	li $s1, 64				#Beginning of Capital Letters for ASCII
-	li $s2, 89				#Ending of Capital Letters for ASCII
+	li $s2, 88				#Ending of Capital Letters for ASCII
 	li $s3, 97				#Beginning of Common Letters for ASCII
-	li $s4, 122				#Ending of Common Letters for ASCII
+	li $s4, 121				#Ending of Common Letters for ASCII
 	li $s5, 0				#Placeholder for calculations
 	li $s6, 65				#Need in order to find numbers less than 65 without ignoring 64
 	li $s7, 57				#Ending of numbers
